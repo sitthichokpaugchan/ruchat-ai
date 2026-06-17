@@ -1,0 +1,49 @@
+{
+	"name": "ollama-webui",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev --host --port 3000",
+		"build": "vite build",
+		"start": "vite preview --host --port 3000",
+		"fmt": "npm run prettier:svelte && npm run prettier",
+		"prettier:svelte": "npx -p prettier@2 -- prettier --plugin-search-dir . --write .",
+		"prettier": "npx -p prettier@2 -- prettier --write '**/*.{js,css,md,html,json}'",
+		"test": "vitest run --coverage"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@sveltejs/kit": "^1.20.4",
+		"@tailwindcss/typography": "^0.5.10",
+		"@testing-library/jest-dom": "^6.6.4",
+		"@testing-library/svelte": "^5.2.8",
+		"@types/uuid": "^10.0.0",
+		"@vitest/coverage-v8": "^3.2.4",
+		"autoprefixer": "^10.4.16",
+		"jsdom": "^26.1.0",
+		"postcss": "^8.4.31",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.10.1",
+		"svelte": "^4.0.5",
+		"tailwindcss": "^3.3.3",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2",
+		"vitest": "^3.2.4"
+	},
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-node": "^1.3.1",
+		"file-saver": "^2.0.5",
+		"highlight.js": "^11.9.0",
+		"idb": "^7.1.1",
+		"js-sha256": "^0.10.1",
+		"katex": "^0.16.18",
+		"marked": "^9.1.0",
+		"ollama-webui": "file:",
+		"svelte-french-toast": "^1.2.0",
+		"tippy.js": "^6.3.7",
+		"uuid": "^9.0.1"
+	},
+	"packageManager": "pnpm@10.15.0"
+}
