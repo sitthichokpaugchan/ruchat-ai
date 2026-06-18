@@ -31,9 +31,9 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 
 ### **ขั้นตอนการรันโปรเจกต์**
 
-1. Clone repository นี้ลงในเครื่องของคุณgit clone https://github.com/sitthichokpaugchan/ruchat-ai.gitcd ruchat-ai
-2. ติดตั้ง Dependenciesnpm install
-3. เริ่มต้นระบบในโหมดนักพัฒนาnpm run dev
+1. Clone repository นี้ลงในเครื่องของคุณ git clone https://github.com/sitthichokpaugchan/ruchat-ai.git แล้ว cd ruchat-ai
+2. ติดตั้ง Dependencies pnpm install
+3. เริ่มต้นระบบในโหมดนักพัฒนา pnpm run dev
 4. เปิดเบราว์เซอร์และเข้าไปที่ http://localhost:5173
 
 *(หมายเหตุ: ระบบ AI จะตอบคำถามเกี่ยวกับ ม.รามคำแหง ได้อย่างแม่นยำ จำเป็นต้องมีการตั้งค่า System Prompt หรือ Modelfile ในฝั่งของ Ollama ให้สวมบทบาทเป็นผู้ช่วยของมหาวิทยาลัยร่วมด้วย)*
