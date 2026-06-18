@@ -394,7 +394,7 @@
 <!-- แสดง Navbar และเนื้อหาหลักเมื่อโหลดเสร็จ -->
 {#if loaded}
   <Navbar />
-  <div class="min-h-screen w-full flex flex-col items-center relative">
+  <div class="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] w-full flex flex-col items-center relative">
     <div class="flex-grow w-full flex justify-center">
       <div class=" py-2.5 flex flex-col justify-between w-full">
         <!-- ส่วนเลือกโมเดล -->

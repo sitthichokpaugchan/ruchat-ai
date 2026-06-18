@@ -29,7 +29,7 @@
   <!-- ส่วนของ input form -->
   <div class="bg-gradient-to-t from-white via-white/90 to-transparent pt-6 pointer-events-auto">
     <div class="max-w-3xl px-2.5 mx-auto">
-      <div class="pb-4">
+      <div class="pb-2">
         <form
           class="flex flex-col w-full rounded-xl border border-gray-200 bg-white text-gray-700 shadow-lg"
           on:submit|preventDefault={(e) => {
@@ -89,7 +89,7 @@
           </div>
         </form>
         <!-- ข้อความเตือน -->
-        <div class="mt-1.5 text-xs text-gray-500 text-center">
+        <div class="mt-1 text-[10px] sm:text-xs text-gray-400 text-center">
           LLM สามารถทำผิดพลาดได้ ตรวจสอบข้อมูลที่สำคัญ
         </div>
       </div>

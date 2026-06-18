@@ -15,6 +15,8 @@
   import toast from "svelte-french-toast";
   import { OLLAMA_API_BASE_URL } from "$lib/constants";
 
+  let loaded = false;
+
   // ฟังก์ชันสำหรับดึงรายการโมเดล
   const getModels = async () => {
     let models = [];
@@ -123,12 +125,12 @@
 
 <div class="app relative">
   <div
-    class="text-gray-700 bg-white min-h-screen overflow-auto flex flex-row pt-16 sm:pt-20"
+    class="text-gray-700 bg-white min-h-screen flex flex-row pt-16 sm:pt-20"
   >
     <!-- แสดง Sidebar -->
     <Sidebar />
-    <!-- แสดงเนื้อหาของหน้า และ Footer -->
-    <div class="flex-grow flex flex-col justify-between">
+    <!-- แสดงเนื้อหาของหน้า -->
+    <div class="flex-grow flex flex-col">
       <slot />
       <Footer />
     </div>

@@ -242,7 +242,7 @@
   <!-- แสดงข้อความเริ่มต้นเมื่อไม่มีข้อความ -->
   <div class="m-auto text-center max-w-md pb-56 px-2">
     <div class="mt-2 text-2xl text-gray-800 font-semibold">
-      วันนี้ฉันจะช่วยคุณได้อย่างไร
+      วันนี้นักศึกษาอยากสอบถามอะไร
     </div>
   </div>
 {:else}

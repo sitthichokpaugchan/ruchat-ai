@@ -15,9 +15,7 @@
   let chatTitle = "";
 
   onMount(async () => {
-    if (window.innerWidth > 1280) {
-      show = true;
-    }
+    // เริ่มต้นโดยไม่แสดง sidebar
   });
 
   // ตั้งค่าอาร์เรย์แชทจากฐานข้อมูลอย่างรีแอกทีฟเมื่อใดก็ตามที่ $db เปลี่ยนแปลง
