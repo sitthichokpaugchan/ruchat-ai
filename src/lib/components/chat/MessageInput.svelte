@@ -7,13 +7,13 @@
 </script>
 
 <!-- ส่วนของ input ที่อยู่ด้านล่างของหน้าจอ -->
-<div class="fixed bottom-0 left-0 right-0">
+<div class="fixed bottom-0 left-0 right-0 z-30">
   <!-- ปุ่มสำหรับเลื่อนลง -->
   <div class="px-2.5 pt-2.5 mx-auto flex justify-center">
     {#if autoScroll === false && messages.length > 0}
       <div class="flex justify-center mb-4">
         <button
-          class="bg-white border border-gray-100 p-1.5 rounded-full hover:bg-gray-100 transition text-sm"
+          class="bg-white border border-gray-100 p-1.5 rounded-full hover:bg-gray-100 transition text-sm shadow-md"
           on:click={() => {
             autoScroll = true;
             window.scrollTo({
@@ -28,11 +28,11 @@
     {/if}
   </div>
   <!-- ส่วนของ input form -->
-  <div class="bg-white">
+  <div class="bg-gradient-to-t from-white via-white/90 to-transparent pt-6">
     <div class="max-w-3xl px-2.5 mx-auto">
-      <div class="bg-gradient-to-t from-white pb-2">
+      <div class="pb-4">
         <form
-          class="flex flex-col w-full rounded-xl border border-gray-200 bg-white text-gray-700"
+          class="flex flex-col w-full rounded-xl border border-gray-200 bg-white text-gray-700 shadow-lg"
           on:submit|preventDefault={(e) => {
             if (prompt.trim() !== "") {
               submitPrompt(prompt);
