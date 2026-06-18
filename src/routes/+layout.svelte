@@ -8,7 +8,7 @@
 
 <!-- ตั้งค่า title ของหน้าเว็บ -->
 <svelte:head>
-  <title>RUChat Ai</title>
+  <title>RUChat AI</title>
 </svelte:head>
 
 <!-- แสดง Toaster component -->

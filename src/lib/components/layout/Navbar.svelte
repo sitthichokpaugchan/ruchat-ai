@@ -120,7 +120,7 @@
 
     <!-- แสดงชื่อแอปพลิเคชัน -->
     <div class="flex-shrink-0 text-lg font-bold tracking-wider text-right text-[#ffb700]">
-      RUChat Ai
+      RUChat AI
     </div>
   </div>
 </nav>

@@ -274,7 +274,7 @@
               {#if message.role === "user"}
                 คุณ
               {:else}
-                RUChat Ai <span class="text-gray-500 text-sm font-medium"
+                RUChat AI <span class="text-gray-500 text-sm font-medium"
                   >{message.model ? ` ${message.model}` : ""}</span
                 >
               {/if}
