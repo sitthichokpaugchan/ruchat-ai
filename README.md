@@ -24,7 +24,7 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 ### **ข้อกำหนดเบื้องต้น (Prerequisites)**
 
 1. ติดตั้ง [Node.js](https://nodejs.org/) (เวอร์ชัน 18 ขึ้นไป)  
-2. ติดตั้ง [Ollama](https://ollama.com/) และดาวน์โหลดโมเดลภาษาที่รองรับภาษาไทย (เช่น llama, typhoon, หรือ gemma)  
+2. ติดตั้ง [Ollama](https://ollama.com/) และดาวน์โหลดโมเดลภาษาที่รองรับภาษาไทย (เช่น gemma4:31b-cloud)  
 3. (สำคัญ) รัน Ollama โดยเปิดการอนุญาต CORS (เพื่อให้ SvelteKit สามารถเรียกใช้งาน API ได้)  
    * ตัวอย่างใน Windows Command Prompt: set OLLAMA\_ORIGINS="\*" && ollama serve  
    * ตัวอย่างใน Mac/Linux: OLLAMA\_ORIGINS="\*" ollama serve
@@ -32,7 +32,7 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 ### **ขั้นตอนการรันโปรเจกต์**
 
 1. Clone repository นี้ลงในเครื่องของคุณ และเข้าไปยังโฟลเดอร์โปรเจกต์:  
-   git clone \[https://github.com/sitthichokpaugchan/ruchat-ai.git\](https://github.com/sitthichokpaugchan/ruchat-ai.git)  
+   git clone https://github.com/sitthichokpaugchan/ruchat-ai.git
    cd ruchat-ai
 
 2. สร้าง Custom Model สำหรับ RUChat Ai ด้วย Modelfile ที่เตรียมไว้ให้ โดยใช้คำสั่ง:  
