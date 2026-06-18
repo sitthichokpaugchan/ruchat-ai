@@ -10,6 +10,7 @@
     chats,
     chatId,
   } from "$lib/stores";
+  import Navbar from "$lib/components/layout/Navbar.svelte";
   import Sidebar from "$lib/components/layout/Sidebar.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
   import toast from "svelte-french-toast";
@@ -123,16 +124,19 @@
   });
 </script>
 
-<div class="app relative">
+<div class="app relative flex flex-col min-h-screen bg-white">
+  <!-- แสดง Navbar -->
+  <Navbar />
   <div
-    class="text-gray-700 bg-white min-h-screen flex flex-row pt-16 sm:pt-20"
+    class="text-gray-700 bg-white flex-grow flex flex-row pt-16 sm:pt-20"
   >
     <!-- แสดง Sidebar -->
     <Sidebar />
     <!-- แสดงเนื้อหาของหน้า -->
-    <div class="flex-grow flex flex-col">
+    <div class="flex-grow flex flex-col min-w-0">
       <slot />
-      <Footer />
     </div>
   </div>
+  <!-- แสดง Footer -->
+  <Footer />
 </div>

@@ -10,8 +10,7 @@
 
   import MessageInput from "$lib/components/chat/MessageInput.svelte";
   import Messages from "$lib/components/chat/Messages.svelte";
-  import ModelSelector from "$lib/components/chat/ModelSelector.svelte";
-  import Navbar from "$lib/components/layout/Navbar.svelte";
+
   import { page } from "$app/stores";
 
   let loaded = false;
@@ -34,7 +33,7 @@
     }, smooth ? 800 : 50);
   };
 
-  let selectedModels = [""];
+  let selectedModels = ["ru-faq:latest"];
 
   let title = "";
   let prompt = "";
@@ -94,10 +93,7 @@
     if (chat) {
       console.log(chat);
 
-      selectedModels =
-        (chat?.models ?? undefined) !== undefined
-          ? chat.models
-          : [chat.model ?? ""];
+      selectedModels = ["ru-faq:latest"];
       history =
         (chat?.history ?? undefined) !== undefined
           ? chat.history
@@ -393,15 +389,9 @@
 
 <!-- แสดง Navbar และเนื้อหาหลักเมื่อโหลดเสร็จ -->
 {#if loaded}
-  <Navbar />
   <div class="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] w-full flex flex-col items-center relative">
     <div class="flex-grow w-full flex justify-center">
       <div class=" py-2.5 flex flex-col justify-between w-full">
-        <!-- ส่วนเลือกโมเดล -->
-        <div class="max-w-2xl mx-auto w-full px-3 md:px-0 mt-10">
-          <ModelSelector bind:selectedModels disabled={messages.length > 0} />
-        </div>
-
         <!-- ส่วนแสดงข้อความ -->
         <div class=" h-full mt-10 mb-8 w-full flex flex-col">
           <Messages

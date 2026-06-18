@@ -25,10 +25,10 @@
     })();
   }
 
-  // จัดการการล้นของ body เมื่อแถบด้านข้างเปิด/ปิด
-  $: if (show) {
+  // จัดการการล้นของ body เมื่อแถบด้านข้างเปิด/ปิด (เฉพาะหน้าจอมือถือ)
+  $: if (show && typeof window !== "undefined" && window.innerWidth < 768) {
     document.body.style.overflow = "hidden";
-  } else {
+  } else if (typeof window !== "undefined") {
     document.body.style.overflow = "unset";
   }
 
@@ -70,9 +70,9 @@
 </script>
 
 {#if show}
-  <!-- โอเวอร์เลย์สำหรับปิดแถบด้านข้างเมื่อคลิกด้านนอก -->
+  <!-- โอเวอร์เลย์สำหรับปิดแถบด้านข้างเมื่อคลิกด้านนอก (เฉพาะหน้าจอมือถือ) -->
   <div
-    class="fixed inset-0 bg-black/50 z-30"
+    class="fixed inset-0 bg-black/50 z-30 md:hidden"
     on:click={() => {
       show = false;
     }}
@@ -81,25 +81,9 @@
 
 <div
   bind:this={navElement}
-  class="h-screen {show
-    ? ''
-    : '-translate-x-[260px]'}  w-[260px] fixed top-0 left-0 z-40 transition bg-white text-gray-800 shadow-2xl text-sm"
+  class="w-[260px] transition text-sm flex-shrink-0 bg-white text-gray-800 md:sticky md:top-20 md:h-[calc(100vh-5rem)] md:translate-x-0 md:border-r md:border-gray-200 md:shadow-none md:z-20 fixed top-0 left-0 h-screen z-40 shadow-2xl {show ? 'translate-x-0' : '-translate-x-[260px]'}"
 >
-  <div class="flex flex-col h-screen">
-    <div class="px-2.5 pt-2.5 flex justify-center space-x-2">
-      <button
-        class="flex-grow flex justify-between rounded-md px-3 py-1.5 hover:bg-gray-200 transition"
-        on:click={async () => {
-          goto("/");
-          await chatId.set(uuidv4());
-          show = false;
-        }}
-      >
-        <div class="flex self-center">
-          <div class=" self-center font-medium text-sm">แชทใหม่</div>
-        </div>
-      </button>
-    </div>
+  <div class="flex flex-col h-full">
 
     <div class="px-2.5 mt-1 mb-2 flex justify-center space-x-2">
       <div class="flex w-full">
@@ -234,7 +218,7 @@
   </div>
 
   <div
-    class="fixed left-0 top-[50dvh] z-40 -translate-y-1/2 transition-transform translate-x-[255px] md:translate-x-[260px] rotate-0"
+    class="md:hidden fixed left-0 top-[50dvh] z-40 -translate-y-1/2 transition-transform translate-x-[255px] rotate-0"
   >
     <button
       class=" group"
