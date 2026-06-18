@@ -6,10 +6,10 @@
   export let messages = [];
 </script>
 
-<!-- ส่วนของ input ที่อยู่ด้านล่างของหน้าจอ -->
-<div class="fixed bottom-0 left-0 right-0 z-30">
+<!-- ส่วนของ input ที่อยู่ด้านล่างของหน้าจอ (ใช้ sticky แทน fixed เพื่อให้อยู่เหนือ footer ในโครงสร้างและไม่ทับซ้อนกัน) -->
+<div class="sticky bottom-0 w-full z-30 pointer-events-none">
   <!-- ปุ่มสำหรับเลื่อนลง -->
-  <div class="px-2.5 pt-2.5 mx-auto flex justify-center">
+  <div class="px-2.5 pt-2.5 mx-auto flex justify-center pointer-events-auto">
     {#if autoScroll === false && messages.length > 0}
       <div class="flex justify-center mb-4">
         <button
@@ -28,7 +28,7 @@
     {/if}
   </div>
   <!-- ส่วนของ input form -->
-  <div class="bg-gradient-to-t from-white via-white/90 to-transparent pt-6">
+  <div class="bg-gradient-to-t from-white via-white/90 to-transparent pt-6 pointer-events-auto">
     <div class="max-w-3xl px-2.5 mx-auto">
       <div class="pb-4">
         <form

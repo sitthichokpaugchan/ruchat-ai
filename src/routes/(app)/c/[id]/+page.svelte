@@ -372,22 +372,24 @@
 <!-- แสดง Navbar และเนื้อหาหลักเมื่อโหลดเสร็จ -->
 {#if loaded}
   <Navbar />
-  <div class="min-h-screen w-full flex justify-center">
-    <div class=" py-2.5 flex flex-col justify-between w-full">
-      <!-- ส่วนเลือกโมเดล -->
-      <div class="max-w-2xl mx-auto w-full px-3 md:px-0 mt-10">
-        <ModelSelector bind:selectedModels disabled={messages.length > 0} />
-      </div>
+  <div class="min-h-screen w-full flex flex-col items-center relative">
+    <div class="flex-grow w-full flex justify-center">
+      <div class=" py-2.5 flex flex-col justify-between w-full">
+        <!-- ส่วนเลือกโมเดล -->
+        <div class="max-w-2xl mx-auto w-full px-3 md:px-0 mt-10">
+          <ModelSelector bind:selectedModels disabled={messages.length > 0} />
+        </div>
 
-      <!-- ส่วนแสดงข้อความ -->
-      <div class=" h-full mt-10 mb-32 w-full flex flex-col">
-        <Messages
-          bind:history
-          bind:messages
-          bind:autoScroll
-          {sendPrompt}
-          {regenerateResponse}
-        />
+        <!-- ส่วนแสดงข้อความ -->
+        <div class=" h-full mt-10 mb-8 w-full flex flex-col">
+          <Messages
+            bind:history
+            bind:messages
+            bind:autoScroll
+            {sendPrompt}
+            {regenerateResponse}
+          />
+        </div>
       </div>
     </div>
 
