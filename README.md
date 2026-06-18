@@ -1,4 +1,4 @@
-# **🎓 RUChat AI (Ollama WebUI)**
+# **🎓 RUChat AI**
 
 **ผู้ช่วยอัจฉริยะสำหรับนักศึกษามหาวิทยาลัยรามคำแหง (Smart Virtual Assistant for RU Students)**
 
