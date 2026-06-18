@@ -4,8 +4,6 @@
   import { chatId, chats } from "$lib/stores";
   import { onMount } from "svelte";
 
-  let currentChatTitle: string = "RUChat Ai";
-
   // รายการเมนูเริ่มต้นพร้อมลิงก์ (Fallback)
   let menus = [
     { text: "หน้าหลัก", url: "https://www.ru.ac.th/th" },
@@ -18,19 +16,6 @@
     { text: "ลิ้งก์ที่น่าสนใจ", url: "https://www.ru.ac.th/th/firstpage/page?view=ExternalLink" },
     { text: "TCAS", url: "https://tcas.ru.ac.th/" }
   ];
-
-  // บล็อกโค้ดที่จะทำงานเมื่อ $chatId หรือ $chats เปลี่ยนแปลง
-  $: {
-    const id = $chatId;
-    const chat = $chats.find((c) => c.id === id);
-    // ถ้ามี chat ให้ตั้งค่า currentChatTitle เป็น title ของ chat
-    if (chat) {
-      currentChatTitle = chat.title;
-    } else {
-      // ถ้าไม่มี chat ให้ตั้งค่า currentChatTitle เป็น "RUChat Ai"
-      currentChatTitle = "RUChat Ai";
-    }
-  }
 
   onMount(() => {
     // ดึงเมนูสดจากเว็บไซต์ ม.รามฯ ผ่าน AllOrigins CORS Proxy
@@ -133,9 +118,9 @@
       </div>
     </div>
 
-    <!-- แสดงหัวข้อของแชทปัจจุบัน -->
-    <div class="flex-shrink-0 text-lg font-semibold truncate max-w-[150px] sm:max-w-[200px] text-right text-white">
-      {currentChatTitle != "" ? currentChatTitle : "RUChat Ai"}
+    <!-- แสดงชื่อแอปพลิเคชัน -->
+    <div class="flex-shrink-0 text-lg font-bold tracking-wider text-right text-[#ffb700]">
+      RUChat Ai
     </div>
   </div>
 </nav>

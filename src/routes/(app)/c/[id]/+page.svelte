@@ -46,6 +46,14 @@
     messages = [];
   }
 
+  // อัปเดต `title` เมื่อมีการเปลี่ยนชื่อแชทใน store
+  $: {
+    const chat = $chats.find((c) => c.id === $chatId);
+    if (chat) {
+      title = chat.title;
+    }
+  }
+
   // โหลดแชทเมื่อ `page.params.id` เปลี่ยนแปลง
   $: if ($page.params.id) {
     (async () => {
@@ -375,8 +383,13 @@
   <div class="min-h-screen w-full flex flex-col items-center relative">
     <div class="flex-grow w-full flex justify-center">
       <div class=" py-2.5 flex flex-col justify-between w-full">
-        <!-- ส่วนเลือกโมเดล -->
-        <div class="max-w-2xl mx-auto w-full px-3 md:px-0 mt-10">
+        <!-- ส่วนเลือกโมเดล และชื่อแชท -->
+        <div class="max-w-2xl mx-auto w-full px-3 md:px-0 mt-10 text-center">
+          <div class="mb-6 select-none">
+            <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#04091e] to-blue-900 tracking-wide font-sans">
+              {title || "RUChat Ai"}
+            </h1>
+          </div>
           <ModelSelector bind:selectedModels disabled={messages.length > 0} />
         </div>
 
