@@ -10,7 +10,7 @@
   };
 </script>
 
-<footer class="bg-[#04091e] text-gray-400 py-8 px-6 border-t border-blue-950 mt-auto w-full select-none text-xs sm:text-sm">
+<footer class="bg-[#04091e] text-gray-400 pt-8 pb-36 px-6 border-t border-blue-950 mt-auto w-full select-none text-xs sm:text-sm">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
     <!-- ข้อมูลติดต่อ มหาวิทยาลัย -->
     <div class="flex flex-col text-center md:text-left">
