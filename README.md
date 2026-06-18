@@ -32,8 +32,7 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 ### **ขั้นตอนการรันโปรเจกต์**
 
 1. Clone repository นี้ลงในเครื่องของคุณ และเข้าไปยังโฟลเดอร์โปรเจกต์:  
-   git clone https://github.com/sitthichokpaugchan/ruchat-ai.git
-   cd ruchat-ai
+   git clone https://github.com/sitthichokpaugchan/ruchat-ai.git && cd ruchat-ai
 
 3. สร้าง Custom Model สำหรับ RUChat Ai ด้วย Modelfile ที่เตรียมไว้ให้ โดยใช้คำสั่ง:  
    ollama create ru-faq \-f Modelfile
