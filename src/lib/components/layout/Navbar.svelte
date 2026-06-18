@@ -91,8 +91,8 @@
   class="fixed top-0 flex w-screen items-center justify-between p-4 bg-[#04091e] text-white z-30 border-b border-blue-950 shadow-md"
 >
   <div class="container mx-auto flex items-center justify-between gap-4">
-    <!-- ปุ่มสำหรับสร้างแชทใหม่ -->
-    <div class="flex-shrink-0">
+    <!-- ปุ่มสำหรับสร้างแชทใหม่ และโลโก้ ม.รามฯ -->
+    <div class="flex-shrink-0 flex items-center gap-3">
       <button
         class="px-4 py-2 bg-[#ffb700] text-[#04091e] hover:bg-[#e09e00] rounded-lg transition font-bold text-sm shadow-sm"
         on:click={async () => {
@@ -105,6 +105,11 @@
       >
         แชทใหม่
       </button>
+      <img
+        src="https://www.ru.ac.th/th/images/banner1.png"
+        alt="Ramkhamhaeng University Logo"
+        class="h-9 w-auto object-contain hidden sm:block"
+      />
     </div>
 
     <!-- แถบข้อความเลื่อนของ ม.รามฯ -->
