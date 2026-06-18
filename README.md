@@ -35,16 +35,16 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
    git clone https://github.com/sitthichokpaugchan/ruchat-ai.git
    cd ruchat-ai
 
-2. สร้าง Custom Model สำหรับ RUChat Ai ด้วย Modelfile ที่เตรียมไว้ให้ โดยใช้คำสั่ง:  
+3. สร้าง Custom Model สำหรับ RUChat Ai ด้วย Modelfile ที่เตรียมไว้ให้ โดยใช้คำสั่ง:  
    ollama create ru-faq \-f Modelfile
 
-3. ติดตั้ง Dependencies:  
-   pnpm install
+4. ติดตั้ง Dependencies:  
+   npm install
 
-4. เริ่มต้นระบบในโหมดนักพัฒนา:  
-   pnpm run dev
+5. เริ่มต้นระบบในโหมดนักพัฒนา:  
+   npm run dev
 
-5. เปิดเบราว์เซอร์และเข้าไปที่ [http://localhost:5173](http://localhost:5173)
+6. เปิดเบราว์เซอร์และเข้าไปที่ [http://localhost:5173](http://localhost:5173)
 
 *(หมายเหตุ: ระบบ AI จะตอบคำถามเกี่ยวกับ ม.รามคำแหง ได้อย่างแม่นยำด้วยการตั้งค่า System Prompt ผ่านโมเดล ru-faq ที่ถูกสร้างขึ้นในขั้นตอนที่ 2\)*
 
