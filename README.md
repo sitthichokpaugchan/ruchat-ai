@@ -6,37 +6,47 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 
 ## **✨ ฟีเจอร์หลัก (Key Features)**
 
-* 🤖 **RU Knowledge-base:** ตอบคำถามครอบคลุม 5 หมวดหมู่หลักของ ม.รามคำแหง (การลงทะเบียน, สถานภาพนักศึกษา, การสอบ, การจัดการเอกสาร, และบริการอื่นๆ)
-* ⚡ **Real-time Streaming:** แสดงผลลัพธ์การตอบกลับจาก AI แบบสตรีมมิ่งทันที (พิมพ์ทีละตัวอักษร)
-* 💾 **Local Chat History:** จัดเก็บประวัติการสนทนาไว้ในเครื่องของผู้ใช้ผ่าน IndexedDB รวดเร็วและเป็นส่วนตัว
-* 📱 **Responsive Design:** หน้าจอผู้ใช้งานรองรับการแสดงผลทุกอุปกรณ์ (Mobile, Tablet, Desktop)
+* 🤖 **RU Knowledge-base:** ตอบคำถามครอบคลุม 5 หมวดหมู่หลักของ ม.รามคำแหง (การลงทะเบียน, สถานภาพนักศึกษา, การสอบ, การจัดการเอกสาร, และบริการอื่นๆ)  
+* ⚡ **Real-time Streaming:** แสดงผลลัพธ์การตอบกลับจาก AI แบบสตรีมมิ่งทันที (พิมพ์ทีละตัวอักษร)  
+* 💾 **Local Chat History:** จัดเก็บประวัติการสนทนาไว้ในเครื่องของผู้ใช้ผ่าน IndexedDB รวดเร็วและเป็นส่วนตัว  
+* 📱 **Responsive Design:** หน้าจอผู้ใช้งานรองรับการแสดงผลทุกอุปกรณ์ (Mobile, Tablet, Desktop)  
 * 📝 **Markdown Support:** รองรับการแสดงผลข้อความแบบ Markdown (ตัวหนา, หัวข้อ, รายการ) ทำให้อ่านง่าย
 
 ## **🛠️ เทคโนโลยีที่ใช้ (Tech Stack)**
 
-* **Frontend:** [SvelteKit](https://kit.svelte.dev/)
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Database (Client-side):** [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+* **Frontend:** [SvelteKit](https://kit.svelte.dev/)  
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)  
+* **Database (Client-side):** [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)  
 * **Backend / AI Engine:** [Ollama](https://ollama.com/) (Local Large Language Model)
 
 ## **🚀 การติดตั้งและการใช้งาน (Installation & Setup)**
 
 ### **ข้อกำหนดเบื้องต้น (Prerequisites)**
 
-1. ติดตั้ง [Node.js](https://nodejs.org/) (เวอร์ชัน 18 ขึ้นไป)
-2. ติดตั้ง [Ollama](https://ollama.com/) และดาวน์โหลดโมเดลภาษาที่รองรับภาษาไทย (เช่น llama, typhoon, หรือ gemma)
-3. (สำคัญ) รัน Ollama โดยเปิดการอนุญาต CORS (เพื่อให้ SvelteKit สามารถเรียกใช้งาน API ได้)
-   * ตัวอย่างใน Windows Command Prompt: set OLLAMA\_ORIGINS="\*" && ollama serve
+1. ติดตั้ง [Node.js](https://nodejs.org/) (เวอร์ชัน 18 ขึ้นไป)  
+2. ติดตั้ง [Ollama](https://ollama.com/) และดาวน์โหลดโมเดลภาษาที่รองรับภาษาไทย (เช่น llama, typhoon, หรือ gemma)  
+3. (สำคัญ) รัน Ollama โดยเปิดการอนุญาต CORS (เพื่อให้ SvelteKit สามารถเรียกใช้งาน API ได้)  
+   * ตัวอย่างใน Windows Command Prompt: set OLLAMA\_ORIGINS="\*" && ollama serve  
    * ตัวอย่างใน Mac/Linux: OLLAMA\_ORIGINS="\*" ollama serve
 
 ### **ขั้นตอนการรันโปรเจกต์**
 
-1. Clone repository นี้ลงในเครื่องของคุณ git clone https://github.com/sitthichokpaugchan/ruchat-ai.git แล้ว cd ruchat-ai
-2. ติดตั้ง Dependencies pnpm install
-3. เริ่มต้นระบบในโหมดนักพัฒนา pnpm run dev
-4. เปิดเบราว์เซอร์และเข้าไปที่ http://localhost:5173
+1. Clone repository นี้ลงในเครื่องของคุณ และเข้าไปยังโฟลเดอร์โปรเจกต์:  
+   git clone \[https://github.com/sitthichokpaugchan/ruchat-ai.git\](https://github.com/sitthichokpaugchan/ruchat-ai.git)  
+   cd ruchat-ai
 
-*(หมายเหตุ: ระบบ AI จะตอบคำถามเกี่ยวกับ ม.รามคำแหง ได้อย่างแม่นยำ จำเป็นต้องมีการตั้งค่า System Prompt หรือ Modelfile ในฝั่งของ Ollama ให้สวมบทบาทเป็นผู้ช่วยของมหาวิทยาลัยร่วมด้วย)*
+2. สร้าง Custom Model สำหรับ RUChat Ai ด้วย Modelfile ที่เตรียมไว้ให้ โดยใช้คำสั่ง:  
+   ollama create ru-faq \-f Modelfile
+
+3. ติดตั้ง Dependencies:  
+   pnpm install
+
+4. เริ่มต้นระบบในโหมดนักพัฒนา:  
+   pnpm run dev
+
+5. เปิดเบราว์เซอร์และเข้าไปที่ [http://localhost:5173](http://localhost:5173)
+
+*(หมายเหตุ: ระบบ AI จะตอบคำถามเกี่ยวกับ ม.รามคำแหง ได้อย่างแม่นยำด้วยการตั้งค่า System Prompt ผ่านโมเดล ru-faq ที่ถูกสร้างขึ้นในขั้นตอนที่ 2\)*
 
 ## **💬 ตัวอย่างการใช้งาน (Usage Examples)**
 
@@ -54,9 +64,9 @@ RUChat Ai คือแอปพลิเคชันเว็บ (Web Applicatio
 
 ## **🗺️ แผนการพัฒนาในอนาคต (Roadmap)**
 
-* \[ \] บูรณาการระบบ RAG (Retrieval-Augmented Generation) เพื่อดึงข้อมูลประกาศล่าสุดจากเว็บไซต์มหาวิทยาลัยแบบ Real-time
-* \[ \] พัฒนาช่องทางการเชื่อมต่อผ่าน LINE Official Account / Facebook Messenger
-* \[ \] รองรับการประมวลผลภาพ (Multimodal) เช่น การตรวจสอบใบเสร็จลงทะเบียนเรียนด้วยภาพถ่าย
+* 🔄 บูรณาการระบบ RAG (Retrieval-Augmented Generation) เพื่อดึงข้อมูลประกาศล่าสุดจากเว็บไซต์มหาวิทยาลัยแบบ Real-time  
+* 💬 พัฒนาช่องทางการเชื่อมต่อผ่าน LINE Official Account / Facebook Messenger  
+* 🖼️ รองรับการประมวลผลภาพ (Multimodal) เช่น การตรวจสอบใบเสร็จลงทะเบียนเรียนด้วยภาพถ่าย
 
 ## **👨‍💻 ผู้พัฒนา**
 
