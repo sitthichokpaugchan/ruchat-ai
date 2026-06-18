@@ -16,6 +16,22 @@
 
   let stopResponseFlag = false;
   let autoScroll = true;
+  let isProgrammaticScroll = false;
+  let scrollTimeout;
+
+  const scrollToBottom = (smooth = false) => {
+    isProgrammaticScroll = true;
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: smooth ? "smooth" : "auto"
+    });
+    
+    scrollTimeout = setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, smooth ? 800 : 50);
+  };
 
   let selectedModels = [""];
 
@@ -122,7 +138,7 @@
     }
 
     await tick();
-    window.scrollTo({ top: document.body.scrollHeight });
+    scrollToBottom(false);
 
     const res = await fetch(`${OLLAMA_API_BASE_URL}/chat`, {
       method: "POST",
@@ -207,7 +223,7 @@
         }
 
         if (autoScroll) {
-          window.scrollTo({ top: document.body.scrollHeight });
+          scrollToBottom(false);
         }
 
         await $db.updateChatById(_chatId, {
@@ -242,7 +258,7 @@
     stopResponseFlag = false;
     await tick();
     if (autoScroll) {
-      window.scrollTo({ top: document.body.scrollHeight });
+      scrollToBottom(false);
     }
 
     if (messages.length == 2 && messages.at(1).content !== "") {
@@ -293,10 +309,7 @@
       prompt = "";
 
       setTimeout(() => {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
+        scrollToBottom(true);
       }, 50);
 
       await sendPrompt(userPrompt, userMessageId, _chatId);
@@ -376,6 +389,7 @@
 <!-- จัดการการเลื่อนหน้าจอ -->
 <svelte:window
   on:scroll={(e) => {
+    if (isProgrammaticScroll) return;
     autoScroll =
       window.innerHeight + window.scrollY >= document.body.offsetHeight - 40;
   }}
@@ -394,15 +408,16 @@
       </div>
 
       <!-- ส่วนแสดงข้อความ -->
-      <div class=" h-full mt-10 mb-8 w-full flex flex-col">
-        <Messages
-          bind:history
-          bind:messages
-          bind:autoScroll
-          {sendPrompt}
-          {regenerateResponse}
-        />
-      </div>
+        <div class=" h-full mt-10 mb-8 w-full flex flex-col">
+          <Messages
+            bind:history
+            bind:messages
+            bind:autoScroll
+            {sendPrompt}
+            {regenerateResponse}
+            {scrollToBottom}
+          />
+        </div>
     </div>
   </div>
 
@@ -413,5 +428,6 @@
     {messages}
     {submitPrompt}
     {stopResponse}
+    {scrollToBottom}
   />
 </div>

@@ -58,7 +58,7 @@
         </a>
       </div>
       <div class="text-center md:text-right text-gray-500 text-xs mt-1">
-        <span>© {new Date().getFullYear()} <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" class="hover:text-[#ffb700] transition-colors">Ramkhamhaeng University</a>. All rights reserved.</span>
+        <span><a href={contactInfo.website} target="_blank" rel="noopener noreferrer" class="hover:text-[#ffb700] transition-colors">Ramkhamhaeng University</a></span>
       </div>
     </div>
   </div>

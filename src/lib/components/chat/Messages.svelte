@@ -15,6 +15,7 @@
   export let autoScroll;
   export let history = {};
   export let messages = [];
+  export let scrollToBottom: Function = () => {};
 
   // เมื่อได้ข้อความครบแล้ว ให้เรนเดอร์ LaTeX, ไฮไลท์โค้ด และสร้างปุ่มคัดลอกโค้ด
   $: if (messages && messages.length > 0 && (messages.at(-1).done ?? false)) {
@@ -30,7 +31,7 @@
   $: if (autoScroll && bottomPadding) {
     (async () => {
       await tick();
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+      scrollToBottom(true);
     })();
   }
 
@@ -191,7 +192,8 @@
       }
     }
     await tick();
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    autoScroll = true;
+    scrollToBottom(true);
   };
 
   // ฟังก์ชันสำหรับแสดงข้อความถัดไป
@@ -231,7 +233,8 @@
       }
     }
     await tick();
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    autoScroll = true;
+    scrollToBottom(true);
   };
 </script>
 
@@ -261,7 +264,7 @@
               />
             {:else}
               <img
-                src="/favicon.png"
+                src="/ru-logo.png"
                 class="w-7 h-7 object-cover rounded-full"
                 alt="Ollama profile"
                 draggable="false"
