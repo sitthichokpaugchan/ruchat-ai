@@ -11,6 +11,7 @@
     chatId,
   } from "$lib/stores";
   import Sidebar from "$lib/components/layout/Sidebar.svelte";
+  import Footer from "$lib/components/layout/Footer.svelte";
   import toast from "svelte-french-toast";
   import { OLLAMA_API_BASE_URL } from "$lib/constants";
 
@@ -126,7 +127,10 @@
   >
     <!-- แสดง Sidebar -->
     <Sidebar />
-    <!-- แสดงเนื้อหาของหน้า -->
-    <slot />
+    <!-- แสดงเนื้อหาของหน้า และ Footer -->
+    <div class="flex-grow flex flex-col justify-between">
+      <slot />
+      <Footer />
+    </div>
   </div>
 </div>

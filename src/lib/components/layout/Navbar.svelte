@@ -88,13 +88,13 @@
 <!-- แถบนำทางหลัก -->
 <nav
   id="nav"
-  class="fixed top-0 flex w-screen items-center justify-between p-4 bg-gray-100 text-gray-700 z-30 border-b border-gray-200"
+  class="fixed top-0 flex w-screen items-center justify-between p-4 bg-[#04091e] text-white z-30 border-b border-blue-950 shadow-md"
 >
   <div class="container mx-auto flex items-center justify-between gap-4">
     <!-- ปุ่มสำหรับสร้างแชทใหม่ -->
     <div class="flex-shrink-0">
       <button
-        class="px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-lg transition font-medium text-sm"
+        class="px-4 py-2 bg-[#ffb700] text-[#04091e] hover:bg-[#e09e00] rounded-lg transition font-bold text-sm shadow-sm"
         on:click={async () => {
           console.log("แชทใหม่");
           // ไปที่หน้าแรก
@@ -108,20 +108,20 @@
     </div>
 
     <!-- แถบข้อความเลื่อนของ ม.รามฯ -->
-    <div class="flex-grow mx-4 overflow-hidden relative bg-white/80 rounded-lg border border-gray-200/50 py-1.5 px-3 select-none flex items-center shadow-sm max-w-[50%] sm:max-w-[60%] md:max-w-[70%]">
+    <div class="flex-grow mx-4 overflow-hidden relative bg-white/10 rounded-lg border border-white/10 py-1.5 px-3 select-none flex items-center shadow-inner max-w-[50%] sm:max-w-[60%] md:max-w-[70%]">
       <div class="marquee-wrapper w-full overflow-hidden relative">
-        <div class="marquee-content whitespace-nowrap text-sm font-semibold text-gray-600 dark:text-gray-300">
+        <div class="marquee-content whitespace-nowrap text-sm font-semibold text-white/90">
           {#each menus as menu, index}
             <a
               href={menu.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:text-blue-600 hover:underline transition-colors duration-200"
+              class="hover:text-[#ffb700] hover:underline transition-colors duration-200"
             >
               {menu.text}
             </a>
             {#if index < menus.length - 1}
-              <span class="mx-4 text-gray-400 font-normal select-none">•</span>
+              <span class="mx-4 text-white/30 font-normal select-none">•</span>
             {/if}
           {/each}
         </div>
@@ -129,7 +129,7 @@
     </div>
 
     <!-- แสดงหัวข้อของแชทปัจจุบัน -->
-    <div class="flex-shrink-0 text-lg font-semibold truncate max-w-[150px] sm:max-w-[200px] text-right">
+    <div class="flex-shrink-0 text-lg font-semibold truncate max-w-[150px] sm:max-w-[200px] text-right text-white">
       {currentChatTitle != "" ? currentChatTitle : "RUChat Ai"}
     </div>
   </div>
