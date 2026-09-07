@@ -4,8 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host --port 3000",
-		"extract:modelfile": "node scripts/extract_modelfile.js",
-		"build": "node scripts/extract_modelfile.js && vite build",
+		"build": "vite build",
 		"start": "vite preview --host --port 3000",
 		"fmt": "npm run prettier:svelte && npm run prettier",
 		"prettier:svelte": "npx -p prettier@2 -- prettier --plugin-search-dir . --write .",
