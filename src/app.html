@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<!-- ลิงก์ไปยังไฟล์ manifest สำหรับ Progressive Web App -->
+	<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+	<!-- ตั้งค่า viewport สำหรับการแสดงผลบนอุปกรณ์ต่างๆ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- พื้นที่สำหรับ SvelteKit ที่จะแทรกแท็ก <head> เพิ่มเติม -->
+	%sveltekit.head%
+</head>
+
+<!-- data-sveltekit-preload-data="hover" เป็นการเปิดใช้งานการโหลดข้อมูลล่วงหน้าเมื่อผู้ใช้เอาเมาส์ไปวางบนลิงก์ -->
+
+<body data-sveltekit-preload-data="hover">
+	<!-- div ที่มี style="display: contents" จะทำให้ div นี้ไม่ส่งผลต่อ layout และให้ SvelteKit จัดการกับเนื้อหาภายในได้โดยตรง -->
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
+
+</html>
